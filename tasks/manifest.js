@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 
   grunt.registerMultiTask('manifest', 'Generate HTML5 cache manifest', function () {
 
-    var options = this.options({verbose: true, timestamp: true});
+    var options = this.options({verbose: true, timestamp: true, prefixer: ''});
     var done = this.async();
 
     grunt.verbose.writeflags(options, 'Options');
@@ -87,9 +87,9 @@ module.exports = function (grunt) {
       if (files) {
         files.forEach(function (item) {
           if (options.process) {
-            contents += encodeURI(options.process(item)) + '\n';
+            contents += (options.prefixer?options.prefixer:'')+encodeURI(options.process(item)) + '\n';
           } else {
-            contents += encodeURI(item) + '\n';
+            contents += (options.prefixer?options.prefixer:'')+encodeURI(item) + '\n';
           }
 
           // hash file contents
@@ -104,7 +104,7 @@ module.exports = function (grunt) {
       if (options.network) {
         contents += '\nNETWORK:\n';
         options.network.forEach(function (item) {
-          contents += encodeURI(item) + '\n';
+          contents += (options.prefixer?options.prefixer:'')+item + '\n';
         });
       } else {
         // If there's no network section, add a default '*' wildcard
@@ -116,7 +116,7 @@ module.exports = function (grunt) {
       if (options.fallback) {
         contents += '\nFALLBACK:\n';
         options.fallback.forEach(function (item) {
-          contents += encodeURI(item) + '\n';
+          contents +=(options.prefixer?options.prefixer:'')+ encodeURI(item) + '\n';
         });
       }
 

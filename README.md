@@ -72,6 +72,12 @@ Default: `undefined`
 A function to process src files path strings before adding them on the appcache
 manifest.
 
+#### prefixer
+Type: `String`
+Default: ``
+
+prefixer for per url
+
 #### exclude
 Type: `String` `Array`	
 Default: `undefined`	
