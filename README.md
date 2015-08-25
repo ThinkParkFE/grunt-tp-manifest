@@ -8,13 +8,13 @@ This plugin requires Grunt `~0.4.5`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-manifest --save-dev
+npm install grunt-tp-manifest --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-manifest');
+grunt.loadNpmTasks('grunt-tp-manifest');
 ```
 
 
@@ -214,5 +214,6 @@ Therefore, it's recommended to add a hash to the filenames's, akin to rails or y
 * 2012/10/23 - v0.3.0 - Upgraded to Grunt 0.4. Fixed dependencies. Fixed basePath.    
 * 2012/10/23 - v0.2.1 - Added possibility to manually specify "CACHE:" files. Made comments optional.
 * 2012/09/28 - v0.2.0 - Refactored from grunt-contrib into individual repo.
+//sudo npm publish --registry=http://registry.npmjs.org
 
 
